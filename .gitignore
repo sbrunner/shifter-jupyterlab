@@ -1,8 +1,10 @@
-/wikidata-cache.json
-/wikidata-cache.json.new
+/.wikidata-cache.json
+/.wikidata-cache.json.new
 *.csv
 *.zip
 *.xlsx
+*.px
+*.html
 .ipynb_checkpoints/
 .~lock.*.xlsx#
 Untitled*.ipynb
