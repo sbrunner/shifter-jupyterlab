@@ -1,0 +1,26 @@
+---
+name: Clean GitHub pages
+
+on: delete
+
+jobs:
+  clean:
+    runs-on: ubuntu-20.04
+    name: Clean GitHub pages
+    timeout-minutes: 5
+    concurrency: gh-pages
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: gh-pages
+      - name: Clean ghpages
+        run: |
+          git config --global user.name "Continuous integration"
+          git config --global user.email "ci@shifters-ch.org"
+          if [ -d $(cat ${GITHUB_EVENT_PATH}|jq --raw-output .ref) ]
+          then
+            git rm -r $(cat ${GITHUB_EVENT_PATH}|jq --raw-output .ref)
+            git commit -m "Remove branch $(cat ${GITHUB_EVENT_PATH}|jq --raw-output .ref)"
+            git push "${remote_repo}" gh-pages
+          fi

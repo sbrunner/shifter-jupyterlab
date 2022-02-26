@@ -1,4 +1,5 @@
-/.wikidata-cache.json
+.wikidata-cache.json
+!/.wikidata-cache.json
 /.wikidata-cache.json.new
 *.csv
 *.zip

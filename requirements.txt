@@ -1,0 +1,7 @@
+jupyterlab==3.2.9
+plotly==5.6.0
+dash==2.2.0
+shifter-pandas==0.1.0
+pandas==1.4.1
+statsmodels==0.13.2
+jupyter-dash==0.4.1

@@ -1,0 +1,71 @@
+---
+name: Continuous integration
+
+on:
+  push:
+  pull_request:
+
+env:
+  HAS_SECRETS: ${{ secrets.HAS_SECRETS }}
+
+jobs:
+  main:
+    runs-on: ubuntu-20.04
+    name: Continuous integration
+    timeout-minutes: 20
+    if: "!startsWith(github.event.head_commit.message, '[skip ci] ')"
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          submodules: true
+
+      - run: echo "${HOME}/.local/bin" >> ${GITHUB_PATH}
+      - run: python3 -m pip install --user --requirement=ci/requirements.txt
+
+      - name: Checks
+        run: c2cciutils-checks
+
+      - run: python3 -m pip install --user --requirement=requirements.txt
+      - run: scripts/create-pages > index.html
+
+      - run: mkdir gh-pages
+      - run: mv *.html gh-pages/
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: gh-pages
+          path: gh-pages
+        if: startsWith(github.ref, 'refs/heads/') && ! contains(github.ref_name, '/') && env.HAS_SECRETS == 'HAS_SECRETS'
+
+  gh-pages:
+    runs-on: ubuntu-20.04
+    name: Github Pages
+    timeout-minutes: 10
+    if: startsWith(github.ref, 'refs/heads/') && ! contains(github.ref_name, '/')
+    concurrency: gh-pages
+    needs:
+      - main
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: gh-pages
+          fetch-depth: 0
+        if: env.HAS_SECRETS == 'HAS_SECRETS'
+
+      - uses: actions/download-artifact@v2
+        with:
+          name: gh-pages
+          path: ${{ github.ref_name }}
+        if: env.HAS_SECRETS == 'HAS_SECRETS'
+
+      - name: Rewrite root commit and force push
+        run: |
+          git config --global user.name "Continuous integration"
+          git config --global user.email "ci@shifters-ch.org"
+          git add ${{ github.ref_name }}
+          git commit --message="Add ${{ github.ref_name }} on GitHub pages"
+          git push
+        if: env.HAS_SECRETS == 'HAS_SECRETS'
