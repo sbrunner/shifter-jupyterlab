@@ -11,7 +11,7 @@ jobs:
     concurrency: gh-pages
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
         with:
           ref: gh-pages
       - name: Clean ghpages
