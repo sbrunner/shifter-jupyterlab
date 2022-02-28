@@ -22,5 +22,5 @@ jobs:
           then
             git rm -r $(cat ${GITHUB_EVENT_PATH}|jq --raw-output .ref)
             git commit -m "Remove branch $(cat ${GITHUB_EVENT_PATH}|jq --raw-output .ref)"
-            git push "${remote_repo}" gh-pages
+            git push gh-pages
           fi
