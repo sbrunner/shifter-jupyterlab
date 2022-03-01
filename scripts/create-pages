@@ -41,7 +41,7 @@ body { padding: 1rem; }
 
             for lang, title in metadata["title"].items():
                 print(f"<h2 lang={lang}>{title}</h2>")
-            for lang, description in metadata["description"].items():
+            for lang, description in metadata.get("description", {}).items():
                 print(f"<p lang={lang}>{description}</p>")
             figures = metadata["figures"]
             print('<ul class="list-group">')
