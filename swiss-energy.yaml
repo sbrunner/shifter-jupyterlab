@@ -1,0 +1,9 @@
+sources:
+  - name: Comptes de l'utilisation d'énergie des ménages et de l'économie
+    url: https://www.bfs.admin.ch/bfs/fr/home/statistiques/catalogues-banques-donnees/donnees.assetdetail.18904904.html
+title:
+  en: Energy Consomation (Switzerland)
+  fr: Energie consomée (Suisse)
+figures:
+  swiss-energy: Joules
+  swiss-energy-fraction: Fractions

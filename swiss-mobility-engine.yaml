@@ -1,0 +1,8 @@
+sources:
+  - name: Parc de voitures de tourisme par caractéristiques techniques, depuis 2005
+    url: https://www.bfs.admin.ch/bfs/fr/home/statistiques/catalogues-banques-donnees/donnees.assetdetail.20884503.html
+title:
+  en: Car fleet by engine (Switzerland)
+  fr: Parc de voitures par motorisation (Suisse)
+figures:
+  swiss-mobility-engine: Car fleet by engine

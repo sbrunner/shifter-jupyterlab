@@ -1,0 +1,11 @@
+sources:
+  - name: British Petroleum - Statistical Review of World Energy
+    url: https://www.bp.com/en/global/corporate/energy-economics/statistical-review-of-world-energy.html
+title:
+  en: Energy consumption
+  fr: Consomation d'energie
+figures:
+  energy-consumption-swiss: Switzerland
+  energy-consumption-fraction-swiss: Switzerland, fraction
+  energy-consumption-world: World
+  energy-consumption-fraction-world: World, fraction
