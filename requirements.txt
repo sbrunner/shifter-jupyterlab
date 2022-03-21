@@ -1,4 +1,4 @@
-jupyterlab==3.3.1
+jupyterlab==3.3.2
 plotly==5.6.0
 dash==2.3.0
 shifter-pandas==0.1.0
