@@ -38,7 +38,7 @@ jobs:
       - run: mkdir gh-pages
       - run: mv *.html gh-pages/
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: gh-pages
           path: gh-pages
