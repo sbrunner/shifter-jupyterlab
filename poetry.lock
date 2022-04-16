@@ -543,7 +543,7 @@ traitlets = "*"
 
 [[package]]
 name = "jupyter-dash"
-version = "0.4.1"
+version = "0.4.2"
 description = "Dash support for the Jupyter notebook interface"
 category = "main"
 optional = false
@@ -555,6 +555,7 @@ dash = "*"
 flask = "*"
 ipykernel = "*"
 ipython = "*"
+nest-asyncio = "*"
 requests = "*"
 retrying = "*"
 
@@ -1332,7 +1333,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.8,<3.11"
-content-hash = "912f092e6c40df772d4cee0077c001658630d3248bf615e7b9df3d0fb67f93d2"
+content-hash = "d6f8472d4f837f22158e58061fd228a9f4f06db873ad288749a33209c790ec78"
 
 [metadata.files]
 ansi2html = [
@@ -1651,8 +1652,8 @@ jupyter-core = [
     {file = "jupyter_core-4.9.2.tar.gz", hash = "sha256:d69baeb9ffb128b8cd2657fcf2703f89c769d1673c851812119e3a2a0e93ad9a"},
 ]
 jupyter-dash = [
-    {file = "jupyter-dash-0.4.1.tar.gz", hash = "sha256:c64c40dd9a784ca4f2df63a7b869c3c463c4fea07c5474ce41b7e8963e683d94"},
-    {file = "jupyter_dash-0.4.1-py3-none-any.whl", hash = "sha256:250b60ca4cb164e065fc693df511590ca2295a6776e4f599c13140dea41fced0"},
+    {file = "jupyter-dash-0.4.2.tar.gz", hash = "sha256:d546c7c25a2867c14c95a48af0ad572803b26915a5ce6052158c9dede4dbf48c"},
+    {file = "jupyter_dash-0.4.2-py3-none-any.whl", hash = "sha256:b07d90ccf38d4dfb04efd630a2b2627f367b79fa4296ee3912d0c4e21e73e9b2"},
 ]
 jupyter-server = [
     {file = "jupyter_server-1.16.0-py3-none-any.whl", hash = "sha256:72dd1ff5373d2def94e80632ba4397e504cc9200c5b5f44b5b0af2e062a73353"},
