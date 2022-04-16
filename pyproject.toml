@@ -1,3 +1,19 @@
 [tool.black]
 line-length = 110
 target-version = ['py38']
+
+[tool.poetry]
+name = 'shifter-jupyterlab'
+version = '0.0.0'
+description = 'Not used'
+authors = []
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.11"
+jupyterlab = "==3.3.2"
+plotly = "==5.7.0"
+dash = "==2.3.0"
+shifter-pandas = "==0.1.0"
+pandas = "==1.4.1"
+statsmodels = "==0.13.2"
+jupyter-dash = "==0.4.1"
