@@ -96,11 +96,11 @@ tests_no_zope = ["coverage[toml] (>=5.0.2)", "hypothesis", "pympler", "pytest (>
 
 [[package]]
 name = "babel"
-version = "2.9.1"
+version = "2.10.1"
 description = "Internationalization utilities"
 category = "main"
 optional = false
-python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+python-versions = ">=3.6"
 
 [package.dependencies]
 pytz = ">=2015.7"
@@ -531,15 +531,18 @@ test = ["codecov", "coverage", "ipykernel (>=6.5)", "ipython", "mypy", "pre-comm
 
 [[package]]
 name = "jupyter-core"
-version = "4.9.2"
+version = "4.10.0"
 description = "Jupyter core package. A base package on which Jupyter projects rely."
 category = "main"
 optional = false
-python-versions = ">=3.6"
+python-versions = ">=3.7"
 
 [package.dependencies]
 pywin32 = {version = ">=1.0", markers = "sys_platform == \"win32\" and platform_python_implementation != \"PyPy\""}
 traitlets = "*"
+
+[package.extras]
+test = ["ipykernel", "pre-commit", "pytest", "pytest-cov", "pytest-timeout"]
 
 [[package]]
 name = "jupyter-dash"
@@ -623,7 +626,7 @@ python-versions = ">=3.7"
 
 [[package]]
 name = "jupyterlab-server"
-version = "2.12.0"
+version = "2.13.0"
 description = "A set of server components for JupyterLab and JupyterLab like applications ."
 category = "main"
 optional = false
@@ -631,17 +634,17 @@ python-versions = ">=3.7"
 
 [package.dependencies]
 babel = "*"
-entrypoints = ">=0.2.2"
+importlib-metadata = {version = ">=3.6", markers = "python_version < \"3.10\""}
 jinja2 = ">=3.0.3"
 json5 = "*"
 jsonschema = ">=3.0.1"
-jupyter-server = ">=1.8,<2.0"
+jupyter-server = ">=1.8,<2"
 packaging = "*"
 requests = "*"
 
 [package.extras]
 openapi = ["openapi-core (>=0.14.2)", "ruamel.yaml"]
-test = ["codecov", "ipykernel", "pytest (>=5.3.2)", "pytest-cov", "jupyter-server", "pytest-console-scripts", "strict-rfc3339", "wheel", "openapi-spec-validator (<0.5)", "openapi-core (>=0.14.2)", "ruamel.yaml"]
+test = ["openapi-core (>=0.14.2)", "ruamel.yaml", "codecov", "ipykernel", "jupyter-server", "openapi-spec-validator (<0.5)", "pytest-console-scripts", "pytest-cov", "pytest (>=5.3.2)", "strict-rfc3339", "wheel"]
 
 [[package]]
 name = "markupsafe"
@@ -764,11 +767,11 @@ python-versions = ">=3.5"
 
 [[package]]
 name = "notebook"
-version = "6.4.10"
+version = "6.4.11"
 description = "A web-based notebook environment for interactive computing"
 category = "main"
 optional = false
-python-versions = ">=3.6"
+python-versions = ">=3.7"
 
 [package.dependencies]
 argon2-cffi = "*"
@@ -790,7 +793,7 @@ traitlets = ">=4.2.1"
 [package.extras]
 docs = ["sphinx", "nbsphinx", "sphinxcontrib-github-alt", "sphinx-rtd-theme", "myst-parser"]
 json-logging = ["json-logging"]
-test = ["pytest", "coverage", "requests", "nbval", "selenium", "pytest-cov", "requests-unixsocket"]
+test = ["pytest", "coverage", "requests", "testpath", "nbval", "selenium", "pytest-cov", "requests-unixsocket"]
 
 [[package]]
 name = "notebook-shim"
@@ -993,11 +996,11 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
 [[package]]
 name = "pygments"
-version = "2.11.2"
+version = "2.12.0"
 description = "Pygments is a syntax highlighting package written in Python."
 category = "main"
 optional = false
-python-versions = ">=3.5"
+python-versions = ">=3.6"
 
 [[package]]
 name = "pyparsing"
@@ -1384,8 +1387,8 @@ attrs = [
     {file = "attrs-21.4.0.tar.gz", hash = "sha256:626ba8234211db98e869df76230a137c4c40a12d72445c45d5f5b716f076e2fd"},
 ]
 babel = [
-    {file = "Babel-2.9.1-py2.py3-none-any.whl", hash = "sha256:ab49e12b91d937cd11f0b67cb259a57ab4ad2b59ac7a3b41d6c06c0ac5b0def9"},
-    {file = "Babel-2.9.1.tar.gz", hash = "sha256:bc0c176f9f6a994582230df350aa6e05ba2ebe4b3ac317eab29d9be5d2768da0"},
+    {file = "Babel-2.10.1-py3-none-any.whl", hash = "sha256:3f349e85ad3154559ac4930c3918247d319f21910d5ce4b25d439ed8693b98d2"},
+    {file = "Babel-2.10.1.tar.gz", hash = "sha256:98aeaca086133efb3e1e2aad0396987490c8425929ddbcfe0550184fdc54cd13"},
 ]
 backcall = [
     {file = "backcall-0.2.0-py2.py3-none-any.whl", hash = "sha256:fbbce6a29f263178a1f7915c1940bde0ec2b2a967566fe1c65c1dfb7422bd255"},
@@ -1648,8 +1651,8 @@ jupyter-client = [
     {file = "jupyter_client-7.2.2.tar.gz", hash = "sha256:8fdbad344a8baa6a413d86d25bbf87ce21cb2b4aa5a8e0413863b9754eb8eb8a"},
 ]
 jupyter-core = [
-    {file = "jupyter_core-4.9.2-py3-none-any.whl", hash = "sha256:f875e4d27e202590311d468fa55f90c575f201490bd0c18acabe4e318db4a46d"},
-    {file = "jupyter_core-4.9.2.tar.gz", hash = "sha256:d69baeb9ffb128b8cd2657fcf2703f89c769d1673c851812119e3a2a0e93ad9a"},
+    {file = "jupyter_core-4.10.0-py3-none-any.whl", hash = "sha256:e7f5212177af7ab34179690140f188aa9bf3d322d8155ed972cbded19f55b6f3"},
+    {file = "jupyter_core-4.10.0.tar.gz", hash = "sha256:a6de44b16b7b31d7271130c71a6792c4040f077011961138afed5e5e73181aec"},
 ]
 jupyter-dash = [
     {file = "jupyter-dash-0.4.2.tar.gz", hash = "sha256:d546c7c25a2867c14c95a48af0ad572803b26915a5ce6052158c9dede4dbf48c"},
@@ -1668,8 +1671,8 @@ jupyterlab-pygments = [
     {file = "jupyterlab_pygments-0.2.2.tar.gz", hash = "sha256:7405d7fde60819d905a9fa8ce89e4cd830e318cdad22a0030f7a901da705585d"},
 ]
 jupyterlab-server = [
-    {file = "jupyterlab_server-2.12.0-py3-none-any.whl", hash = "sha256:db5d234955c5c2684f77a064345712f071acf7df31f0d8c31b420b33b09d6472"},
-    {file = "jupyterlab_server-2.12.0.tar.gz", hash = "sha256:00e0f4b4c399f55938323ea10cf92d915288fe12753e35d1069f6ca08b72abbf"},
+    {file = "jupyterlab_server-2.13.0-py3-none-any.whl", hash = "sha256:fc9e86d4e7c4b139de59b0a96b53071e670bee1ed106a3389daecd68f1221aeb"},
+    {file = "jupyterlab_server-2.13.0.tar.gz", hash = "sha256:2040298a133458aa22f287a877d6bb91ff973f6298d562264f9f7b75e92a5ace"},
 ]
 markupsafe = [
     {file = "MarkupSafe-2.1.1-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:86b1f75c4e7c2ac2ccdaec2b9022845dbb81880ca318bb7a0a01fbf7813e3812"},
@@ -1742,8 +1745,8 @@ nest-asyncio = [
     {file = "nest_asyncio-1.5.5.tar.gz", hash = "sha256:e442291cd942698be619823a17a86a5759eabe1f8613084790de189fe9e16d65"},
 ]
 notebook = [
-    {file = "notebook-6.4.10-py3-none-any.whl", hash = "sha256:49cead814bff0945fcb2ee07579259418672ac175d3dc3d8102a4b0a656ed4df"},
-    {file = "notebook-6.4.10.tar.gz", hash = "sha256:2408a76bc6289283a8eecfca67e298ec83c67db51a4c2e1b713dd180bb39e90e"},
+    {file = "notebook-6.4.11-py3-none-any.whl", hash = "sha256:b4a6baf2eba21ce67a0ca11a793d1781b06b8078f34d06c710742e55f3eee505"},
+    {file = "notebook-6.4.11.tar.gz", hash = "sha256:709b1856a564fe53054796c80e17a67262071c86bfbdfa6b96aaa346113c555a"},
 ]
 notebook-shim = [
     {file = "notebook_shim-0.1.0-py3-none-any.whl", hash = "sha256:02432d55a01139ac16e2100888aa2b56c614720cec73a27e71f40a5387e45324"},
@@ -1885,8 +1888,8 @@ pycparser = [
     {file = "pycparser-2.21.tar.gz", hash = "sha256:e644fdec12f7872f86c58ff790da456218b10f863970249516d60a5eaca77206"},
 ]
 pygments = [
-    {file = "Pygments-2.11.2-py3-none-any.whl", hash = "sha256:44238f1b60a76d78fc8ca0528ee429702aae011c265fe6a8dd8b63049ae41c65"},
-    {file = "Pygments-2.11.2.tar.gz", hash = "sha256:4e426f72023d88d03b2fa258de560726ce890ff3b630f88c21cbb8b2503b8c6a"},
+    {file = "Pygments-2.12.0-py3-none-any.whl", hash = "sha256:dc9c10fb40944260f6ed4c688ece0cd2048414940f1cea51b8b226318411c519"},
+    {file = "Pygments-2.12.0.tar.gz", hash = "sha256:5eb116118f9612ff1ee89ac96437bb6b49e8f04d8a13b514ba26f620208e26eb"},
 ]
 pyparsing = [
     {file = "pyparsing-3.0.8-py3-none-any.whl", hash = "sha256:ef7b523f6356f763771559412c0d7134753f037822dad1b16945b7b846f7ad06"},
