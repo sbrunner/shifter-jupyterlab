@@ -1,1 +1,1 @@
-c2cciutils==1.1.10
+c2cciutils==1.1.11
