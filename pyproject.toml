@@ -4,7 +4,7 @@ target-version = ['py38']
 
 [tool.poetry]
 name = 'shifter-jupyterlab'
-version = '0.0.0'
+version = "0.1.0"
 description = 'Not used'
 authors = []
 
