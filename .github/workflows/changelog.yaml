@@ -1,6 +1,7 @@
 name: Changelog Generator
 
 on:
+  tag:
   push:
     branches:
       - master
