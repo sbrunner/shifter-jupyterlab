@@ -19,6 +19,8 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
       - run: git add CHANGELOG.md
+      - run: git config --global user.email "ci@example.com"
+      - run: git config --global user.name "CI"
       - run: git commit -m "Update the changelog"
       - run: git checkout -b changelog-update
       - run: git push -f
