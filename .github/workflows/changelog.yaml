@@ -1,10 +1,11 @@
 name: Changelog Generator
 
 on:
-  tag:
   push:
     branches:
       - master
+    tags:
+      - '*'
 
 jobs:
   changelog:
@@ -27,6 +28,6 @@ jobs:
       - run: git commit -m "Update the changelog"
       - run: git checkout -b changelog-update
       - run: git push origin changelog-update -f
-      - run: gh pr create --base=master --fill | true
+      - run: gh pr create --base=master --fill --label=build | true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
