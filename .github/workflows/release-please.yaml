@@ -14,6 +14,16 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Generate changelog
-        uses: fabernovel/github-changelog-generator-action@v1.0.0-alpha02
+        id: changelog
+        uses: heinrichreimer/github-changelog-generator-action@v2.3
         with:
-          options: --token ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - run: cp CHANGELOG.md /tmp/CHANGELOG.md
+      - run: echo ${{ steps.changelog.outputs.changelog }} > CHANGELOG.md
+      - run: echo >> CHANGELOG.md
+      - run: cat /tmp/CHANGELOG.md >> CHANGELOG.md
+      - run: git add CHANGELOG.md
+      - run: git commit -m "Update the changelog"
+      - run: git checkout -b changelog-update
+      - run: git push -f
+      - run: gh pr --create --base=master
