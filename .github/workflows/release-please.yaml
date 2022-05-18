@@ -24,4 +24,4 @@ jobs:
       - run: git commit -m "Update the changelog"
       - run: git checkout -b changelog-update
       - run: git push origin changelog-update -f
-      - run: gh pr --create --base=master
+      - run: gh pr create --base=master --fill
