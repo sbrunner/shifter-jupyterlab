@@ -1,4 +1,4 @@
-name: Release Please
+name: Changelog Generator
 
 on:
   push:
@@ -6,12 +6,14 @@ on:
       - master
 
 jobs:
-  release-please:
-    name: Release Please
+  changelog:
+    name: Chanegelog Generator
     runs-on: ubuntu-20.04
     timeout-minutes: 5
 
     steps:
-      - uses: google-github-actions/release-please-action@v3
+      - uses: actions/checkout@v2
+      - name: Generate changelog
+        uses: fabernovel/github-changelog-generator-action@{latest-release}
         with:
-          release-type: python
+          options: --token ${{ secrets.GITHUB_TOKEN }}
