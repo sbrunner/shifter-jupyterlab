@@ -18,6 +18,7 @@ jobs:
         uses: heinrichreimer/github-changelog-generator-action@v2.3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          includeLabels: dependencies
       - run: git add CHANGELOG.md
       - run: git config --global user.email "ci@example.com"
       - run: git config --global user.name "CI"
