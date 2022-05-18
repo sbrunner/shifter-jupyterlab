@@ -1,6 +1,6 @@
 {
   extends: ['config:base', 'schedule:earlyMondays'],
-  "labels": ["dependencies"],
+  labels: ['dependencies'],
   lockFileMaintenance: { enabled: true, automerge: true },
   packageRules: [
     /** Automerge the patch, the minor and the dev dependency */

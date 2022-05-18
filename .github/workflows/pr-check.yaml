@@ -2,6 +2,10 @@ name: Required label
 
 on:
   pull_request:
+    types:
+      - opened
+      - reopened
+      - labeled
 
 jobs:
   build:
