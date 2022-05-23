@@ -15,6 +15,7 @@ jobs:
     timeout-minutes: 5
 
     steps:
+      - run: echo ${{ toJSON(github) }}
       - name: Auto reviews updates
         uses: golfzaptw/action-auto-reviews-from-branches@master
         with:
