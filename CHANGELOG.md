@@ -6,8 +6,21 @@
 
 ### :package: Build
 
+- Don't run 2 CI jobs in a pull request [\#49](https://github.com/sbrunner/shifter-jupyterlab/pull/49) ([sbrunner](https://github.com/sbrunner))
 - Little CI fix [\#42](https://github.com/sbrunner/shifter-jupyterlab/pull/42) ([sbrunner](https://github.com/sbrunner))
 - Run on tag, fix prettier [\#41](https://github.com/sbrunner/shifter-jupyterlab/pull/41) ([sbrunner](https://github.com/sbrunner))
+- Update the changelog [\#40](https://github.com/sbrunner/shifter-jupyterlab/pull/40) ([github-actions[bot]](https://github.com/apps/github-actions))
+
+### :wrench: Chore
+
+- Lock file maintenance [\#52](https://github.com/sbrunner/shifter-jupyterlab/pull/52) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency dash to v2.5.0 [\#51](https://github.com/sbrunner/shifter-jupyterlab/pull/51) ([renovate[bot]](https://github.com/apps/renovate))
+- Update all patch versions [\#50](https://github.com/sbrunner/shifter-jupyterlab/pull/50) ([renovate[bot]](https://github.com/apps/renovate))
+- Lock file maintenance [\#48](https://github.com/sbrunner/shifter-jupyterlab/pull/48) ([renovate[bot]](https://github.com/apps/renovate))
+- Lock file maintenance [\#47](https://github.com/sbrunner/shifter-jupyterlab/pull/47) ([renovate[bot]](https://github.com/apps/renovate))
+- Lock file maintenance [\#46](https://github.com/sbrunner/shifter-jupyterlab/pull/46) ([renovate[bot]](https://github.com/apps/renovate))
+- Update all minor versions [\#45](https://github.com/sbrunner/shifter-jupyterlab/pull/45) ([renovate[bot]](https://github.com/apps/renovate))
+- Update all patch versions [\#44](https://github.com/sbrunner/shifter-jupyterlab/pull/44) ([renovate[bot]](https://github.com/apps/renovate))
 
 ## [0.1.0](https://github.com/sbrunner/shifter-jupyterlab/tree/0.1.0) (2022-05-18)
 
