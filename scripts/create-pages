@@ -24,6 +24,8 @@ body { padding: 1rem; }
     print("<body>")
     first = True
     for file in glob.glob("*.ipynb"):
+        if file in ("swiss-energy.ipynb",):
+            continue
         subprocess.run(["jupyter", "nbconvert", "--to=notebook", "--execute", file], check=True)
         new_html_files = set(glob.glob("*.html")) - imported_html_filed
         if new_html_files:
