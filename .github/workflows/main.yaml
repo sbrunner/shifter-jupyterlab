@@ -3,10 +3,10 @@ name: Continuous integration
 on:
   push:
     branches:
-      - master
-      - '[0-9]+.[0-9]+'
+    - master
+    - '[0-9]+.[0-9]+'
     tags:
-      - '*'
+    - '*'
   pull_request:
 
 env:
@@ -20,34 +20,34 @@ jobs:
     if: "!startsWith(github.event.head_commit.message, '[skip ci] ')"
 
     steps:
-      - run: docker system prune --all --force
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-          submodules: true
+    - run: docker system prune --all --force
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+        submodules: true
 
-      - run: echo "${HOME}/.local/bin" >> ${GITHUB_PATH}
-      - run: python3 -m pip install --user --requirement=ci/requirements.txt
+    - run: echo "${HOME}/.local/bin" >> ${GITHUB_PATH}
+    - run: python3 -m pip install --user --requirement=ci/requirements.txt
 
-      - name: Checks
-        run: c2cciutils-checks
+    - name: Checks
+      run: c2cciutils-checks
 
-      - run: >
-          python3 -m keyring --disable &&
-          python3 -m pip install --user --requirement=requirements.txt &&
-          poetry export --without-hashes --output=requirements-poetry.txt &&
-          python3 -m pip install --user --requirement=requirements-poetry.txt
+    - run: >
+        python3 -m keyring --disable &&
+        python3 -m pip install --user --requirement=requirements.txt &&
+        poetry export --without-hashes --output=requirements-poetry.txt &&
+        python3 -m pip install --user --requirement=requirements-poetry.txt
 
-      - run: scripts/create-pages > index.html
+    - run: scripts/create-pages > index.html
 
-      - run: mkdir gh-pages
-      - run: mv *.html gh-pages/
+    - run: mkdir gh-pages
+    - run: mv *.html gh-pages/
 
-      - uses: actions/upload-artifact@v3
-        with:
-          name: gh-pages
-          path: gh-pages
-        if: startsWith(github.ref, 'refs/heads/') && ! contains(github.ref_name, '/') && env.HAS_SECRETS == 'HAS_SECRETS'
+    - uses: actions/upload-artifact@v3
+      with:
+        name: gh-pages
+        path: gh-pages
+      if: startsWith(github.ref, 'refs/heads/') && ! contains(github.ref_name, '/') && env.HAS_SECRETS == 'HAS_SECRETS'
 
   gh-pages:
     runs-on: ubuntu-20.04
@@ -56,27 +56,27 @@ jobs:
     if: startsWith(github.ref, 'refs/heads/') && ! contains(github.ref_name, '/')
     concurrency: gh-pages
     needs:
-      - main
+    - main
 
     steps:
-      - run: docker system prune --all --force
-      - uses: actions/checkout@v3
-        with:
-          ref: gh-pages
-          fetch-depth: 0
-        if: env.HAS_SECRETS == 'HAS_SECRETS'
+    - run: docker system prune --all --force
+    - uses: actions/checkout@v3
+      with:
+        ref: gh-pages
+        fetch-depth: 0
+      if: env.HAS_SECRETS == 'HAS_SECRETS'
 
-      - uses: actions/download-artifact@v3
-        with:
-          name: gh-pages
-          path: ${{ github.ref_name }}
-        if: env.HAS_SECRETS == 'HAS_SECRETS'
+    - uses: actions/download-artifact@v3
+      with:
+        name: gh-pages
+        path: ${{ github.ref_name }}
+      if: env.HAS_SECRETS == 'HAS_SECRETS'
 
-      - name: Rewrite root commit and force push
-        run: |
-          git config --global user.name "Continuous integration"
-          git config --global user.email "ci@shifters-ch.org"
-          git add ${{ github.ref_name }}
-          git commit --message="Add ${{ github.ref_name }} on GitHub pages"
-          git push
-        if: env.HAS_SECRETS == 'HAS_SECRETS'
+    - name: Rewrite root commit and force push
+      run: |
+        git config --global user.name "Continuous integration"
+        git config --global user.email "ci@shifters-ch.org"
+        git add ${{ github.ref_name }}
+        git commit --message="Add ${{ github.ref_name }} on GitHub pages"
+        git push
+      if: env.HAS_SECRETS == 'HAS_SECRETS'
