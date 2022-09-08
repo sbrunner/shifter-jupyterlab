@@ -47,8 +47,7 @@ jobs:
         with:
           name: gh-pages
           path: gh-pages
-        if: startsWith(github.ref, 'refs/heads/') && ! contains(github.ref_name, '/')
-          && env.HAS_SECRETS == 'HAS_SECRETS'
+        if: startsWith(github.ref, 'refs/heads/') && ! contains(github.ref_name, '/') && env.HAS_SECRETS == 'HAS_SECRETS'
 
   gh-pages:
     runs-on: ubuntu-20.04
