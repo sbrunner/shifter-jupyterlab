@@ -1,37 +1,15 @@
 # Changelog
 
-## [Unreleased](https://github.com/sbrunner/shifter-jupyterlab/tree/HEAD)
-
-[Full Changelog](https://github.com/sbrunner/shifter-jupyterlab/compare/0.1.0...HEAD)
-
-### :package: Build
-
-- Little CI fix [\#42](https://github.com/sbrunner/shifter-jupyterlab/pull/42) ([sbrunner](https://github.com/sbrunner))
-- Run on tag, fix prettier [\#41](https://github.com/sbrunner/shifter-jupyterlab/pull/41) ([sbrunner](https://github.com/sbrunner))
-
 ## [0.1.0](https://github.com/sbrunner/shifter-jupyterlab/tree/0.1.0) (2022-05-18)
 
 [Full Changelog](https://github.com/sbrunner/shifter-jupyterlab/compare/c68df7f85bad74c5f602a49eeea5af84abac1f89...0.1.0)
 
-### :sparkles: Enhancements
+#### :sparkles: Enhancements
 
 - Bigger exported plots [\#3](https://github.com/sbrunner/shifter-jupyterlab/pull/3) ([sbrunner](https://github.com/sbrunner))
 - Better index page with sources [\#2](https://github.com/sbrunner/shifter-jupyterlab/pull/2) ([sbrunner](https://github.com/sbrunner))
 
-### :heart: Test
-
-- Add tests [\#1](https://github.com/sbrunner/shifter-jupyterlab/pull/1) ([sbrunner](https://github.com/sbrunner))
-
-### :package: Build
-
-- Update the changelog [\#39](https://github.com/sbrunner/shifter-jupyterlab/pull/39) ([github-actions[bot]](https://github.com/apps/github-actions))
-- Update the changelog generator [\#38](https://github.com/sbrunner/shifter-jupyterlab/pull/38) ([sbrunner](https://github.com/sbrunner))
-- Tests the pull request title instead the commits messages [\#37](https://github.com/sbrunner/shifter-jupyterlab/pull/37) ([sbrunner](https://github.com/sbrunner))
-- Conventional commits [\#35](https://github.com/sbrunner/shifter-jupyterlab/pull/35) ([sbrunner](https://github.com/sbrunner))
-- Automerge Renovate [\#26](https://github.com/sbrunner/shifter-jupyterlab/pull/26) ([sbrunner](https://github.com/sbrunner))
-- Setup Poetry [\#17](https://github.com/sbrunner/shifter-jupyterlab/pull/17) ([sbrunner](https://github.com/sbrunner))
-
-### :wrench: Chore
+#### :package: Dependencies update
 
 - Lock file maintenance [\#34](https://github.com/sbrunner/shifter-jupyterlab/pull/34) ([renovate[bot]](https://github.com/apps/renovate))
 - Bump c2cciutils from 1.1.10 to 1.1.11 [\#33](https://github.com/sbrunner/shifter-jupyterlab/pull/33) ([dependabot[bot]](https://github.com/apps/dependabot))
@@ -56,6 +34,16 @@
 - Bump dash from 2.2.0 to 2.3.0 [\#7](https://github.com/sbrunner/shifter-jupyterlab/pull/7) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump jupyterlab from 3.2.9 to 3.3.0 [\#5](https://github.com/sbrunner/shifter-jupyterlab/pull/5) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump c2cciutils from 1.1.3 to 1.1.4 [\#4](https://github.com/sbrunner/shifter-jupyterlab/pull/4) ([dependabot[bot]](https://github.com/apps/dependabot))
+
+**Merged pull requests:**
+
+- Update the changelog [\#39](https://github.com/sbrunner/shifter-jupyterlab/pull/39) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Update the changelog generator [\#38](https://github.com/sbrunner/shifter-jupyterlab/pull/38) ([sbrunner](https://github.com/sbrunner))
+- Tests the pull request title instead the commits messages [\#37](https://github.com/sbrunner/shifter-jupyterlab/pull/37) ([sbrunner](https://github.com/sbrunner))
+- Conventional commits [\#35](https://github.com/sbrunner/shifter-jupyterlab/pull/35) ([sbrunner](https://github.com/sbrunner))
+- Automerge Renovate [\#26](https://github.com/sbrunner/shifter-jupyterlab/pull/26) ([sbrunner](https://github.com/sbrunner))
+- Setup Poetry [\#17](https://github.com/sbrunner/shifter-jupyterlab/pull/17) ([sbrunner](https://github.com/sbrunner))
+- Add tests [\#1](https://github.com/sbrunner/shifter-jupyterlab/pull/1) ([sbrunner](https://github.com/sbrunner))
 
 
 
