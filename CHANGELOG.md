@@ -17,6 +17,7 @@
 - Conventional commits [\#35](https://github.com/sbrunner/shifter-jupyterlab/pull/35) ([sbrunner](https://github.com/sbrunner))
 - Automerge Renovate [\#26](https://github.com/sbrunner/shifter-jupyterlab/pull/26) ([sbrunner](https://github.com/sbrunner))
 - Setup Poetry [\#17](https://github.com/sbrunner/shifter-jupyterlab/pull/17) ([sbrunner](https://github.com/sbrunner))
+- Add tests [\#1](https://github.com/sbrunner/shifter-jupyterlab/pull/1) ([sbrunner](https://github.com/sbrunner))
 
 #### :package: Dependencies update
 
@@ -43,10 +44,6 @@
 - Bump dash from 2.2.0 to 2.3.0 [\#7](https://github.com/sbrunner/shifter-jupyterlab/pull/7) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump jupyterlab from 3.2.9 to 3.3.0 [\#5](https://github.com/sbrunner/shifter-jupyterlab/pull/5) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump c2cciutils from 1.1.3 to 1.1.4 [\#4](https://github.com/sbrunner/shifter-jupyterlab/pull/4) ([dependabot[bot]](https://github.com/apps/dependabot))
-
-**Merged pull requests:**
-
-- Add tests [\#1](https://github.com/sbrunner/shifter-jupyterlab/pull/1) ([sbrunner](https://github.com/sbrunner))
 
 
 
