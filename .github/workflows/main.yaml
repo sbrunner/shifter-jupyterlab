@@ -11,6 +11,7 @@ on:
 
 env:
   HAS_SECRETS: ${{ secrets.HAS_SECRETS }}
+  PYTHON_KEYRING_BACKEND: keyring.backends.null.Keyring
 
 jobs:
   main:
@@ -32,10 +33,9 @@ jobs:
       - name: Checks
         run: c2cciutils-checks
 
-      - run: >
-          python3 -m keyring --disable &&
-          python3 -m pip install --user --requirement=requirements.txt &&
-          poetry export --without-hashes --output=requirements-poetry.txt &&
+      - run: python3 -m pip install --user --requirement=requirements.txt
+      - run: |
+          poetry export --without-hashes --output=requirements-poetry.txt
           python3 -m pip install --user --requirement=requirements-poetry.txt
 
       - run: scripts/create-pages > index.html
