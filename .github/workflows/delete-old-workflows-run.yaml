@@ -14,9 +14,6 @@ jobs:
     name: Delete old workflow runs
 
     steps:
-      - run: echo hi
-        env:
-          GITHUB_EVENT: ${{ toJson(github) }}
       - name: Delete old workflow runs
         uses: MajorScruffy/delete-old-workflow-runs@v0.3.0
         with:
