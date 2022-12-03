@@ -514,18 +514,19 @@ test = ["codecov", "coverage", "ipykernel (>=6.5)", "ipython", "mypy", "pre-comm
 
 [[package]]
 name = "jupyter-core"
-version = "5.0.0"
+version = "5.1.0"
 description = "Jupyter core package. A base package on which Jupyter projects rely."
 category = "main"
 optional = false
 python-versions = ">=3.8"
 
 [package.dependencies]
-platformdirs = "*"
+platformdirs = ">=2.5"
 pywin32 = {version = ">=1.0", markers = "sys_platform == \"win32\" and platform_python_implementation != \"PyPy\""}
-traitlets = "*"
+traitlets = ">=5.3"
 
 [package.extras]
+docs = ["myst-parser", "sphinxcontrib-github-alt", "traitlets"]
 test = ["ipykernel", "pre-commit", "pytest", "pytest-cov", "pytest-timeout"]
 
 [[package]]
@@ -1399,7 +1400,7 @@ testing = ["func-timeout", "jaraco.itertools", "pytest (>=6)", "pytest-black (>=
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.8,<3.11"
-content-hash = "24862d03cb08063806c895f0d7c492d95facaa27b829cc445378b5b3efccdb10"
+content-hash = "56d0e448281dfe936ef28db8b8752b82752a0006e2a77868daef8165add7db28"
 
 [metadata.files]
 ansi2html = [
@@ -1660,8 +1661,8 @@ jupyter-client = [
     {file = "jupyter_client-7.3.5.tar.gz", hash = "sha256:3c58466a1b8d55dba0bf3ce0834e4f5b7760baf98d1d73db0add6f19de9ecd1d"},
 ]
 jupyter-core = [
-    {file = "jupyter_core-5.0.0-py3-none-any.whl", hash = "sha256:6da1fae48190da8551e1b5dbbb19d51d00b079d59a073c7030407ecaf96dbb1e"},
-    {file = "jupyter_core-5.0.0.tar.gz", hash = "sha256:4ed68b7c606197c7e344a24b7195eef57898157075a69655a886074b6beb7043"},
+    {file = "jupyter_core-5.1.0-py3-none-any.whl", hash = "sha256:f5740d99606958544396914b08e67b668f45e7eff99ab47a7f4bcead419c02f4"},
+    {file = "jupyter_core-5.1.0.tar.gz", hash = "sha256:a5ae7c09c55c0b26f692ec69323ba2b62e8d7295354d20f6cd57b749de4a05bf"},
 ]
 jupyter-dash = [
     {file = "jupyter-dash-0.4.2.tar.gz", hash = "sha256:d546c7c25a2867c14c95a48af0ad572803b26915a5ce6052158c9dede4dbf48c"},
