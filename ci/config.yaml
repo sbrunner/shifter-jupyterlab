@@ -3,8 +3,6 @@
 checks:
   versions:
     rebuild: False
-  required_workflows:
-    main.yaml: False
   black:
     ignore_patterns_re:
       - README\.md
