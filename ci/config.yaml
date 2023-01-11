@@ -2,7 +2,8 @@
 
 checks:
   versions:
-    rebuild: False
+    rebuild: false
   black:
     ignore_patterns_re:
       - README\.md
+  codespell: false
