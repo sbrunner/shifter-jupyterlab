@@ -45,9 +45,9 @@ jobs:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
       - run: python3 -m pip install --user --requirement=requirements.txt
-      - run: |
-          poetry export --without-hashes --output=requirements-poetry.txt
-          python3 -m pip install --user --requirement=requirements-poetry.txt
+      - run: poetry --version
+      - run: poetry export --without-hashes --output=requirements-poetry.txt
+      - run: python3 -m pip install --user --no-deps --requirement=requirements-poetry.txt
 
       - run: scripts/create-pages > index.html
 
