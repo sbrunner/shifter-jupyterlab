@@ -18,7 +18,7 @@ repos:
       - id: trailing-whitespace
       - id: mixed-line-ending
   - repo: https://github.com/sbrunner/hooks
-    rev: 0.3.2
+    rev: 0.5.0
     hooks:
       - id: copyright
       # Require a timeout in GitHub workflow files
@@ -35,7 +35,7 @@ repos:
     rev: v2.2.2
     hooks:
       - id: codespell
-        exclude: ^(.*/)?poetry\.lock$
+        exclude: ^(.*/)?(poetry\.lock|.*\.ipynb)$
         args:
           - --ignore-words=.github/spell-ignore-words.txt
   - repo: https://github.com/pre-commit/mirrors-prettier
