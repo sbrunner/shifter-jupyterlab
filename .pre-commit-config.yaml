@@ -35,7 +35,7 @@ repos:
     rev: v2.2.2
     hooks:
       - id: codespell
-        exclude: ^(.*/)?poetry\.lock$
+        exclude: ^(.*/)?(poetry\.lock|.*\.ipynb)$
         args:
           - --ignore-words=.github/spell-ignore-words.txt
   - repo: https://github.com/pre-commit/mirrors-prettier
