@@ -2,6 +2,9 @@ ci:
   autoupdate_schedule: quarterly
   skip:
     - poetry-lock
+    - copyright
+    - poetry-check
+    - ripsecrets
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
@@ -21,14 +24,14 @@ repos:
     rev: 0.5.0
     hooks:
       - id: copyright
-      # Require a timeout in GitHub workflow files
-      - id: workflows-require-timeout
-      # Check Poetry config
-      - id: poetry-check
+      - # Require a timeout in GitHub workflow files
+        id: workflows-require-timeout
+      - # Check Poetry config
+        id: poetry-check
         additional_dependencies:
           - poetry==1.4.0 # pypi
-      # Do Poetry lock
-      - id: poetry-lock
+      - # Do Poetry lock
+        id: poetry-lock
         additional_dependencies:
           - poetry==1.4.0 # pypi
   - repo: https://github.com/codespell-project/codespell
@@ -62,6 +65,15 @@ repos:
       - id: check-renovate
         additional_dependencies:
           - pyjson5==1.6.2 # pypi
+      - id: check-github-actions
+      - id: check-jsonschema
+        name: Check GitHub Workflows set timeout-minutes
+        files: ^\.github/workflows/[^/]+$
+        types:
+          - yaml
+        args:
+          - --builtin-schema
+          - github-workflows-require-timeout
   - repo: https://github.com/sirwart/ripsecrets
     rev: v0.1.5
     hooks:
