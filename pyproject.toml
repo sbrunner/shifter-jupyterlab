@@ -11,8 +11,8 @@ authors = []
 [tool.poetry.dependencies]
 python = ">=3.8,<3.11"
 jupyterlab = "3.6.3"
-plotly = "5.14.0"
-dash = "2.9.2"
+plotly = "5.14.1"
+dash = "2.9.3"
 shifter-pandas = "0.2.1"
 pandas = "1.5.3"
 statsmodels = "0.13.5"
