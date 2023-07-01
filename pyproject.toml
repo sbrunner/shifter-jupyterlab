@@ -10,14 +10,14 @@ authors = []
 
 [tool.poetry.dependencies]
 python = ">=3.8,<3.11"
-jupyterlab = "3.6.4"
+jupyterlab = "3.6.5"
 plotly = "5.14.1"
 dash = "2.9.3"
 shifter-pandas = "0.2.1"
 pandas = "1.5.3"
 statsmodels = "0.13.5"
 jupyter-dash = "0.4.2"
-jupyter-core = "5.3.0"
+jupyter-core = "5.3.1"
 certifi = "2022.12.7"
 flask = "2.2.5"
 tornado = "6.3.2"
