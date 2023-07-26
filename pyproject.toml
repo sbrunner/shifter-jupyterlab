@@ -10,7 +10,7 @@ authors = []
 
 [tool.poetry.dependencies]
 python = ">=3.8,<3.11"
-jupyterlab = "4.0.2"
+jupyterlab = "4.0.3"
 plotly = "5.15.0"
 dash = "2.11.1"
 shifter-pandas = "0.2.1"
