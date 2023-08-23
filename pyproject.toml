@@ -1,6 +1,6 @@
 [tool.black]
 line-length = 110
-target-version = ['py38']
+target-version = ["py39"]
 
 [tool.poetry]
 name = 'shifter-jupyterlab'
@@ -9,7 +9,7 @@ description = 'Not used'
 authors = []
 
 [tool.poetry.dependencies]
-python = ">=3.8,<3.11"
+python = ">=3.9,<3.11"
 jupyterlab = "4.0.5"
 plotly = "5.15.0"
 dash = "2.11.1"
