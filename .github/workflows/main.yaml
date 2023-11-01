@@ -15,8 +15,8 @@ env:
 
 jobs:
   main:
-    runs-on: ubuntu-22.04
     name: Continuous integration
+    runs-on: ubuntu-22.04
     timeout-minutes: 20
     if: "!startsWith(github.event.head_commit.message, '[skip ci] ')"
 
@@ -61,8 +61,8 @@ jobs:
         if: startsWith(github.ref, 'refs/heads/') && ! contains(github.ref_name, '/') && env.HAS_SECRETS == 'HAS_SECRETS'
 
   gh-pages:
-    runs-on: ubuntu-22.04
     name: Github Pages
+    runs-on: ubuntu-22.04
     timeout-minutes: 10
     if: startsWith(github.ref, 'refs/heads/') && ! contains(github.ref_name, '/')
     concurrency: gh-pages
