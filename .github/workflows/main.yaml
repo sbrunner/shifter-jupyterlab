@@ -77,7 +77,7 @@ jobs:
           fetch-depth: 0
         if: env.HAS_SECRETS == 'HAS_SECRETS'
 
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: gh-pages
           path: ${{ github.ref_name }}
