@@ -76,8 +76,6 @@
       matchFileNames: ['.github/**', '.pre-commit-config.yaml', 'ci/**'],
       groupName: 'CI dependencies',
       automerge: true,
-      separateMajorMinor: false,
-      separateMinorPatch: false,
     },
   ],
 }
