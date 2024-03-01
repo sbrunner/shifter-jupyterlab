@@ -662,6 +662,62 @@ files = [
 ]
 
 [[package]]
+name = "h11"
+version = "0.14.0"
+description = "A pure-Python, bring-your-own-I/O implementation of HTTP/1.1"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "h11-0.14.0-py3-none-any.whl", hash = "sha256:e3fe4ac4b851c468cc8363d500db52c2ead036020723024a109d37346efaa761"},
+    {file = "h11-0.14.0.tar.gz", hash = "sha256:8f19fbbe99e72420ff35c00b27a34cb9937e902a8b810e2c88300c6f0a3b699d"},
+]
+
+[[package]]
+name = "httpcore"
+version = "1.0.4"
+description = "A minimal low-level HTTP client."
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "httpcore-1.0.4-py3-none-any.whl", hash = "sha256:ac418c1db41bade2ad53ae2f3834a3a0f5ae76b56cf5aa497d2d033384fc7d73"},
+    {file = "httpcore-1.0.4.tar.gz", hash = "sha256:cb2839ccfcba0d2d3c1131d3c3e26dfc327326fbe7a5dc0dbfe9f6c9151bb022"},
+]
+
+[package.dependencies]
+certifi = "*"
+h11 = ">=0.13,<0.15"
+
+[package.extras]
+asyncio = ["anyio (>=4.0,<5.0)"]
+http2 = ["h2 (>=3,<5)"]
+socks = ["socksio (==1.*)"]
+trio = ["trio (>=0.22.0,<0.25.0)"]
+
+[[package]]
+name = "httpx"
+version = "0.27.0"
+description = "The next generation HTTP client."
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "httpx-0.27.0-py3-none-any.whl", hash = "sha256:71d5465162c13681bff01ad59b2cc68dd838ea1f10e51574bac27103f00c91a5"},
+    {file = "httpx-0.27.0.tar.gz", hash = "sha256:a0cb88a46f32dc874e04ee956e4c2764aba2aa228f650b06788ba6bda2962ab5"},
+]
+
+[package.dependencies]
+anyio = "*"
+certifi = "*"
+httpcore = "==1.*"
+idna = "*"
+sniffio = "*"
+
+[package.extras]
+brotli = ["brotli", "brotlicffi"]
+cli = ["click (==8.*)", "pygments (==2.*)", "rich (>=10,<14)"]
+http2 = ["h2 (>=3,<5)"]
+socks = ["socksio (==1.*)"]
+
+[[package]]
 name = "idna"
 version = "3.6"
 description = "Internationalized Domain Names in Applications (IDNA)"
@@ -1054,17 +1110,18 @@ test = ["jupyter-server (>=2.0.0)", "pytest (>=7.0)", "pytest-jupyter[server] (>
 
 [[package]]
 name = "jupyterlab"
-version = "4.0.13"
+version = "4.1.2"
 description = "JupyterLab computational environment"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "jupyterlab-4.0.13-py3-none-any.whl", hash = "sha256:3aa81c364d50cc715f6c2935674c7cca8936bd74b5898d6ad6598aef08c43808"},
-    {file = "jupyterlab-4.0.13.tar.gz", hash = "sha256:e8950f94e0d8ab8aa7d8166b19db27f4d4fea5000ee04ba372c50116e98fb733"},
+    {file = "jupyterlab-4.1.2-py3-none-any.whl", hash = "sha256:aa88193f03cf4d3555f6712f04d74112b5eb85edd7d222c588c7603a26d33c5b"},
+    {file = "jupyterlab-4.1.2.tar.gz", hash = "sha256:5d6348b3ed4085181499f621b7dfb6eb0b1f57f3586857aadfc8e3bf4c4885f9"},
 ]
 
 [package.dependencies]
 async-lru = ">=1.0.0"
+httpx = ">=0.25.0"
 importlib-metadata = {version = ">=4.8.3", markers = "python_version < \"3.10\""}
 ipykernel = "*"
 jinja2 = ">=3.0.3"
@@ -1080,8 +1137,8 @@ traitlets = "*"
 
 [package.extras]
 dev = ["build", "bump2version", "coverage", "hatch", "pre-commit", "pytest-cov", "ruff (==0.2.0)"]
-docs = ["jsx-lexer", "myst-parser", "pydata-sphinx-theme (>=0.13.0)", "pytest", "pytest-check-links", "pytest-tornasync", "sphinx (>=1.8,<7.2.0)", "sphinx-copybutton"]
-docs-screenshots = ["altair (==5.0.1)", "ipython (==8.14.0)", "ipywidgets (==8.0.6)", "jupyterlab-geojson (==3.4.0)", "jupyterlab-language-pack-zh-cn (==4.0.post0)", "matplotlib (==3.7.1)", "nbconvert (>=7.0.0)", "pandas (==2.2.0)", "scipy (==1.12.0)", "vega-datasets (==0.9.0)"]
+docs = ["jsx-lexer", "myst-parser", "pydata-sphinx-theme (>=0.13.0)", "pytest", "pytest-check-links", "pytest-jupyter", "sphinx (>=1.8,<7.3.0)", "sphinx-copybutton"]
+docs-screenshots = ["altair (==5.2.0)", "ipython (==8.16.1)", "ipywidgets (==8.1.1)", "jupyterlab-geojson (==3.4.0)", "jupyterlab-language-pack-zh-cn (==4.0.post6)", "matplotlib (==3.8.2)", "nbconvert (>=7.0.0)", "pandas (==2.2.0)", "scipy (==1.12.0)", "vega-datasets (==0.9.0)"]
 test = ["coverage", "pytest (>=7.0)", "pytest-check-links (>=0.7)", "pytest-console-scripts", "pytest-cov", "pytest-jupyter (>=0.5.3)", "pytest-timeout", "pytest-tornasync", "requests", "requests-cache", "virtualenv"]
 
 [[package]]
@@ -1549,13 +1606,13 @@ test = ["appdirs (==1.4.4)", "covdefaults (>=2.3)", "pytest (>=7.4.3)", "pytest-
 
 [[package]]
 name = "plotly"
-version = "5.18.0"
+version = "5.19.0"
 description = "An open-source, interactive data visualization library for Python"
 optional = false
-python-versions = ">=3.6"
+python-versions = ">=3.8"
 files = [
-    {file = "plotly-5.18.0-py3-none-any.whl", hash = "sha256:23aa8ea2f4fb364a20d34ad38235524bd9d691bf5299e800bca608c31e8db8de"},
-    {file = "plotly-5.18.0.tar.gz", hash = "sha256:360a31e6fbb49d12b007036eb6929521343d6bee2236f8459915821baefa2cbb"},
+    {file = "plotly-5.19.0-py3-none-any.whl", hash = "sha256:906abcc5f15945765328c5d47edaa884bc99f5985fbc61e8cd4dc361f4ff8f5a"},
+    {file = "plotly-5.19.0.tar.gz", hash = "sha256:5ea91a56571292ade3e3bc9bf712eba0b95a1fb0a941375d978cc79432e055f4"},
 ]
 
 [package.dependencies]
@@ -2566,4 +2623,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.11"
-content-hash = "de2276210d4f8de7b8f6e52d4687db7f3fa730a043e76bbebd7c62435851a797"
+content-hash = "1a50048256be0c3670817fdfac3578a923d14cf67570122914f83fadc0a874e7"
