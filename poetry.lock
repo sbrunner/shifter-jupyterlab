@@ -457,13 +457,13 @@ test = ["pytest"]
 
 [[package]]
 name = "dash"
-version = "2.16.0"
+version = "2.16.1"
 description = "A Python framework for building reactive web-apps. Developed by Plotly."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "dash-2.16.0-py3-none-any.whl", hash = "sha256:2a06e3856d9389656e1c84d6afb086748db0bbb676f44abb899df117c2879606"},
-    {file = "dash-2.16.0.tar.gz", hash = "sha256:7887998e278f6cc1b8200ec9d9d6f82b5cb599997a31723c926487a25ce52117"},
+    {file = "dash-2.16.1-py3-none-any.whl", hash = "sha256:8a9d2a618e415113c0b2a4d25d5dc4df5cb921f733b33dde75559db2316b1df1"},
+    {file = "dash-2.16.1.tar.gz", hash = "sha256:b2871d6b8d4c9dfd0a64f89f22d001c93292910b41d92d9ff2bb424a28283976"},
 ]
 
 [package.dependencies]
@@ -971,13 +971,13 @@ test = ["coverage", "ipykernel (>=6.14)", "mypy", "paramiko", "pre-commit", "pyt
 
 [[package]]
 name = "jupyter-core"
-version = "5.7.1"
+version = "5.7.2"
 description = "Jupyter core package. A base package on which Jupyter projects rely."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "jupyter_core-5.7.1-py3-none-any.whl", hash = "sha256:c65c82126453a723a2804aa52409930434598fd9d35091d63dfb919d2b765bb7"},
-    {file = "jupyter_core-5.7.1.tar.gz", hash = "sha256:de61a9d7fc71240f688b2fb5ab659fbb56979458dc66a71decd098e03c79e218"},
+    {file = "jupyter_core-5.7.2-py3-none-any.whl", hash = "sha256:4f7315d2f6b4bcf2e3e7cb6e46772eba760ae459cd1f59d29eb57b0a01bd7409"},
+    {file = "jupyter_core-5.7.2.tar.gz", hash = "sha256:aa5f8d32bbf6b431ac830496da7392035d6f61b4f54872f15c4bd2a9c3f536d9"},
 ]
 
 [package.dependencies]
@@ -987,7 +987,7 @@ traitlets = ">=5.3"
 
 [package.extras]
 docs = ["myst-parser", "pydata-sphinx-theme", "sphinx-autodoc-typehints", "sphinxcontrib-github-alt", "sphinxcontrib-spelling", "traitlets"]
-test = ["ipykernel", "pre-commit", "pytest", "pytest-cov", "pytest-timeout"]
+test = ["ipykernel", "pre-commit", "pytest (<8)", "pytest-cov", "pytest-timeout"]
 
 [[package]]
 name = "jupyter-dash"
@@ -1110,13 +1110,13 @@ test = ["jupyter-server (>=2.0.0)", "pytest (>=7.0)", "pytest-jupyter[server] (>
 
 [[package]]
 name = "jupyterlab"
-version = "4.1.2"
+version = "4.1.5"
 description = "JupyterLab computational environment"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "jupyterlab-4.1.2-py3-none-any.whl", hash = "sha256:aa88193f03cf4d3555f6712f04d74112b5eb85edd7d222c588c7603a26d33c5b"},
-    {file = "jupyterlab-4.1.2.tar.gz", hash = "sha256:5d6348b3ed4085181499f621b7dfb6eb0b1f57f3586857aadfc8e3bf4c4885f9"},
+    {file = "jupyterlab-4.1.5-py3-none-any.whl", hash = "sha256:3bc843382a25e1ab7bc31d9e39295a9f0463626692b7995597709c0ab236ab2c"},
+    {file = "jupyterlab-4.1.5.tar.gz", hash = "sha256:c9ad75290cb10bfaff3624bf3fbb852319b4cce4c456613f8ebbaa98d03524db"},
 ]
 
 [package.dependencies]
@@ -2623,4 +2623,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.11"
-content-hash = "912346914e9c58104f0bab6963e6a7cee7d267d236d35815c0700c4069096f07"
+content-hash = "4e9434e37c96f66b1b11c777b597dfcdf27aa48ecfd1b77895fd55d57b958861"
