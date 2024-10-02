@@ -9,7 +9,7 @@ description = 'Not used'
 authors = []
 
 [tool.poetry.dependencies]
-python = ">=3.9,<3.11"
+python = ">=3.9,<3.13"
 jupyterlab = "4.2.5"
 plotly = "5.24.1"
 dash = "2.18.1"
