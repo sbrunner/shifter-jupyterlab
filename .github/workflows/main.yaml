@@ -27,8 +27,13 @@ jobs:
           fetch-depth: 0
           submodules: true
 
-      - run: echo "${HOME}/.local/bin" >> ${GITHUB_PATH}
-      - run: python3 -m pip install --user --requirement=ci/requirements.txt
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python3 -m pip install --requirement=ci/requirements.txt
+
+      - name: Print environment information
+        run: c2cciutils-env
 
       - uses: actions/cache@v4
         with:
@@ -38,20 +43,17 @@ jobs:
       - run: pre-commit run --all-files
       - run: git diff --exit-code --patch > /tmp/pre-commit.patch || true
         if: failure()
-
       - uses: actions/upload-artifact@v4
         with:
           name: Apply pre-commit fix.patch
           path: /tmp/pre-commit.patch
           retention-days: 1
         if: failure()
-      - name: Print environment information
-        run: c2cciutils-env
 
-      - run: python3 -m pip install --user --requirement=requirements.txt
+      - run: python3 -m pip install --requirement=requirements.txt
       - run: poetry --version
       - run: poetry export --without-hashes --output=requirements-poetry.txt
-      - run: python3 -m pip install --user --no-deps --requirement=requirements-poetry.txt
+      - run: python3 -m pip install --no-deps --requirement=requirements-poetry.txt
 
       - run: scripts/create-pages > index.html
 
