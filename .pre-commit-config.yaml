@@ -22,6 +22,7 @@ repos:
       - id: poetry-lock
         additional_dependencies:
           - poetry==2.1.1 # pypi
+      - id: canonicalize
   - repo: https://github.com/codespell-project/codespell
     rev: v2.4.1
     hooks:
