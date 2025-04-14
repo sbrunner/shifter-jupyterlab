@@ -15,7 +15,7 @@ authors = []
 python = ">=3.10,<3.13"
 jupyterlab = "4.3.5"
 plotly = "6.0.0"
-dash = "2.18.2"
+dash = "3.0.3"
 shifter-pandas = "1.0.3"
 pandas = "2.2.3"
 statsmodels = "0.14.4"
