@@ -26,9 +26,7 @@ body { padding: 1rem; }
     for file in glob.glob("*.ipynb"):
         if file in ("swiss-energy.ipynb",):
             continue
-        subprocess.run(
-            ["jupyter", "nbconvert", "--to=notebook", "--execute", file], check=True
-        )
+        subprocess.run(["jupyter", "nbconvert", "--to=notebook", "--execute", file], check=True)
         new_html_files = set(glob.glob("*.html")) - imported_html_filed
         if new_html_files:
             if not first:
@@ -39,9 +37,7 @@ body { padding: 1rem; }
 
             metadata_filename = f"{os.path.splitext(file)[0]}.yaml"
             if not os.path.exists(metadata_filename):
-                raise RuntimeError(
-                    f"Missing '{metadata_filename}' file to provide additional information."
-                )
+                raise RuntimeError(f"Missing '{metadata_filename}' file to provide additional information.")
             with open(metadata_filename, encoding="utf-8") as metadata_file:
                 metadata = yaml.load(metadata_file.read(), Loader=yaml.SafeLoader)
 
@@ -71,6 +67,4 @@ body { padding: 1rem; }
     print("</html>")
 
     for file in glob.glob("**/*.ipynb"):
-        subprocess.run(
-            ["jupyter", "nbconvert", "--to=notebook", "--execute", file], check=True
-        )
+        subprocess.run(["jupyter", "nbconvert", "--to=notebook", "--execute", file], check=True)
