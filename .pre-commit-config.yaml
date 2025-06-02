@@ -19,7 +19,7 @@ repos:
         # Require a timeout in GitHub workflow files
       - id: workflows-require-timeout
         # Check Poetry config
-      - id: poetry-lock
+      - id: poetry2-lock
         additional_dependencies:
           - poetry==2.1.3 # pypi
       - id: canonicalize
