@@ -26,12 +26,12 @@ jobs:
 
     steps:
       - run: docker system prune --all --force
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
           submodules: true
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
       - run: python3 -m pip install --requirement=ci/requirements.txt
@@ -81,13 +81,13 @@ jobs:
 
     steps:
       - run: docker system prune --all --force
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           ref: gh-pages
           fetch-depth: 0
         if: env.HAS_SECRETS == 'HAS_SECRETS'
 
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v5
         with:
           name: gh-pages
           path: ${{ github.ref_name }}
