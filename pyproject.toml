@@ -1,5 +1,5 @@
 [tool.ruff]
-target-version = "py310"
+target-version = "py311"
 line-length = 110
 
 [tool.ruff.lint.pydocstyle]
@@ -9,7 +9,7 @@ convention = "numpy"
 version = '0.0.0'
 
 [tool.poetry.dependencies]
-python = ">=3.10,<3.13"
+python = ">=3.11,<4"
 jupyterlab = "4.4.8"
 plotly = "6.0.0"
 dash = "2.18.2"
@@ -32,11 +32,11 @@ python-json-logger = "4.0.0"
 classifiers = [
     'Programming Language :: Python',
     'Programming Language :: Python :: 3',
-    'Programming Language :: Python :: 3.10',
     'Programming Language :: Python :: 3.11',
     'Programming Language :: Python :: 3.12',
+    'Programming Language :: Python :: 3.13',
 ]
 dynamic = ["dependencies", "version"]
 name = 'shifter-jupyterlab'
 description = 'Not used'
-requires-python = ">=3.10"
+requires-python = ">=3.11"
